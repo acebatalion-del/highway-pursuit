@@ -1,0 +1,26 @@
+---
+description: Spend less. Only add what is necessary for games and videos.
+alwaysApply: true
+---
+
+# Conservative usage
+
+Spend as little as possible. Do the requested change and stop.
+
+## Scope
+
+- Add only what was asked for in the game or video.
+- Do not add extra features, polish, refactors, assets, effects, UI, or copy.
+- If something is unclear, ask once. Do not explore or build extras.
+
+## How to work
+
+- Open only the files needed for the change. Skip broad searches.
+- Make the smallest edit that does the job.
+- Skip extra tool calls, browser checks, and long verification when the change is small and local.
+- Keep replies short. Do not suggest follow-up work.
+
+## Examples
+
+- Asked to change car speed: edit that value. Leave handling, camera, and UI alone.
+- Asked to trim a video clip: cut that clip. Leave color, captions, and other scenes alone.

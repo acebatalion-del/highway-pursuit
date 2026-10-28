@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Highway Pursuit</title>
+  </head>
+  <body>
+    <canvas id="view"></canvas>
+
+    <div id="hud" hidden>
+      <div class="place" id="place">North Loop</div>
+      <div class="minimap-wrap">
+        <canvas id="minimap" width="220" height="220"></canvas>
+      </div>
+      <div class="speedo">
+        <div class="speed-row">
+          <span id="speed">0</span>
+          <span class="unit">MPH</span>
+        </div>
+        <div class="speed-meta">
+          <span id="gear">N</span>
+          <span id="car-name">Feld Commuter</span>
+          <span id="camera-name">Chase</span>
+        </div>
+      </div>
+      <p class="hint" id="hint">WASD drive · Space handbrake · C camera · R reset · Esc pause</p>
+    </div>
+
+    <div id="menu" class="overlay">
+      <section id="panel-main" class="panel">
+        <p class="eyebrow">New Meridian</p>
+        <h1>Highway Pursuit</h1>
+        <p class="lede">
+          North Loop test drive. Weight, braking, and grip are in. The full city, pursuits, and garage economy come next.
+        </p>
+        <div class="actions">
+          <button id="play" class="primary" type="button">Drive</button>
+          <button id="open-garage" type="button">Garage</button>
+          <button id="open-controls" type="button">Controls</button>
+          <button id="open-settings" type="button">Settings</button>
+        </div>
+      </section>
+
+      <section id="panel-garage" class="panel wide" hidden>
+        <p class="eyebrow">Garage</p>
+        <h2>Choose a car</h2>
+        <p class="lede">All five are open for this test drive. Prices are what the career will charge later.</p>
+        <div id="car-list" class="car-list"></div>
+        <button id="garage-back" type="button">Back</button>
+      </section>
+
+      <section id="panel-controls" class="panel" hidden>
+        <p class="eyebrow">Controls</p>
+        <h2>Keyboard and pad</h2>
+        <ul class="keys">
+          <li><span>W / Up</span> Accelerate</li>
+          <li><span>S / Down</span> Brake and reverse</li>
+          <li><span>A D / Arrows</span> Steer</li>
+          <li><span>Space / A</span> Handbrake</li>
+          <li><span>C / Y</span> Camera</li>
+          <li><span>R</span> Reset on the highway</li>
+          <li><span>1 – 5</span> Swap car</li>
+          <li><span>Esc / Start</span> Pause</li>
+          <li><span>Click</span> Mouse look</li>
+          <li><span>Right stick</span> Look around</li>
+        </ul>
+        <button id="controls-back" type="button">Back</button>
+      </section>
+
+      <section id="panel-settings" class="panel" hidden>
+        <p class="eyebrow">Settings</p>
+        <h2>Assists</h2>
+        <label class="check"><input id="opt-abs" type="checkbox" checked /> ABS — stable brakes in a turn</label>
+        <label class="check"><input id="opt-tcs" type="checkbox" /> Traction control — cuts power when the car slides</label>
+        <label class="slider">Volume <input id="opt-volume" type="range" min="0" max="100" value="70" /></label>
+        <button id="settings-back" type="button">Back</button>
+      </section>
+    </div>
+
+    <div id="pause" class="overlay" hidden>
+      <section class="panel">
+        <p class="eyebrow">Paused</p>
+        <h2>North Loop</h2>
+        <div class="actions">
+          <button id="resume" class="primary" type="button">Resume</button>
+          <button id="pause-garage" type="button">Garage</button>
+          <button id="pause-controls" type="button">Controls</button>
+          <button id="pause-settings" type="button">Settings</button>
+          <button id="quit" type="button">Main menu</button>
+        </div>
+      </section>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
